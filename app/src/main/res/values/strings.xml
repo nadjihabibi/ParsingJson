@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Parsing Json</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="id">ID Kamera</string>
 </resources>

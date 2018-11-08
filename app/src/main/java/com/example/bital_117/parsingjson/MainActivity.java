@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                         String urlCamera = properti.getString("url");
 
                         JSONObject location = properti.getJSONObject("location");
-                        String latitude = location.getString("latitude");
-                        String longitude = location.getString("longitude");
+                        double latitude = location.getDouble("latitude");
+                        double longitude = location.getDouble("longitude");
 
                         tv.append(id+"\n"+urlCamera+"\n"+latitude+"\n"+longitude);
 
