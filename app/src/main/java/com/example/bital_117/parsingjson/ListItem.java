@@ -2,11 +2,11 @@ package com.example.bital_117.parsingjson;
 
 public class ListItem {
     private String mUrlCamera;
-    private String mId;
+    private int mId;
     private double mlatitude;
     private double mlongitude;
 
-    public ListItem(String mUrlCamera, String mId, double mlatitude, double mlongitude) {
+    public ListItem(String mUrlCamera, int mId, double mlatitude, double mlongitude) {
         this.mUrlCamera = mUrlCamera;
         this.mId = mId;
         this.mlatitude = mlatitude;
@@ -17,7 +17,7 @@ public class ListItem {
         return mUrlCamera;
     }
 
-    public String getmId() {
+    public int getmId() {
         return mId;
     }
 
