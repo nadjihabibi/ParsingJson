@@ -24,9 +24,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private ArrayList<ListItem> mListItems;
     private List<Address>addresses = null;
 
+    //filter
+    private List<ListItem> listItemsFull;
+
+
     public Adapter(Context context, ArrayList<ListItem> listItems){
         mContext = context;
         mListItems = listItems;
+
+        //filter
+        listItemsFull = new ArrayList<>(listItems);
     }
 
     @NonNull
@@ -64,6 +71,46 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public int getItemCount() {
         return mListItems.size();
     }
+    /*
+
+
+    //filter
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<ListItem> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length()==0){
+                filteredList.addAll(listItemsFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (ListItem item : listItemsFull){
+                    if (item.getmUrlCamera().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            mListItems.clear();
+            mListItems.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+    */
+
+
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
